@@ -479,8 +479,8 @@ article { display: none; }
     font-weight: var(--fw300);
     line-height: 1.6;
     display: -webkit-box;
-    line-clamp: 4;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -497,7 +497,9 @@ article { display: none; }
     justify-content: center;
     align-items: center;
     overflow-y: auto;
-    overscroll-behavior: contain;
+    @supports (overscroll-behavior: contain) {
+        overscroll-behavior: contain;
+    }
     z-index: 20;
     pointer-events: none;
     visibility: hidden;
